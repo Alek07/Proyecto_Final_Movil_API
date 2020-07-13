@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Arroz con Pollo",
+        "category": 1,
+        "ingredients": [{"ingredient": "arroz"}, {"ingredient": "pollo"}],
+        "description": "pon todo y se cocina solo bro",
+        "author" : "5f0b640751555c3143150d42",
+        "upvotes": 3
+    },
+    {
+        "name": "Charlotte de Limon",
+        "category": 6,
+        "ingredients": [{"ingredient": "galletas maria"}, {"ingredient": "leche condensada"}, {"ingredient": "limon"}],
+        "description": "bate todo y ponlo en el congelador tho",
+        "author" : "5f0b640751555c3143150d42",
+        "upvotes": 20
+    },
+    {
+        "name": "Mac & Cheese",
+        "category": 9,
+        "ingredients": [{"ingredient": "macarones"}, {"ingredient": "queso en polvo"}],
+        "description": "yo u get lit, put everything in a pot and goes wushhhhh",
+        "author" : "5f0b640751555c3143150d42",
+        "upvotes": 100000
+    },
+    {
+        "name": "deditos de pescado",
+        "category": 2,
+        "ingredients": [{"ingredient": "deditos de pescado"}, {"ingredient": "apanizado"}],
+        "description": "cubre los deditos con empanizado y en la olla a freir",
+        "author" : "5f0b640751555c3143150d42",
+        "upvotes": 50
+    },
+    {
+        "name": "Mojito",
+        "category": 5,
+        "ingredients": [{"ingredient": "ron blanco"}, {"ingredient": "limon"}, {"ingredient": "hierbabuena"}],
+        "description": "tu sabes como va esto, wushhh en un vazo",
+        "author" : "5f0b640751555c3143150d42",
+        "upvotes": 5
+    },
+    {
+        "name": "Sopa du Macako",
+        "category": 1,
+        "ingredients": [{"ingredient": "pechuga de mono"}, {"ingredient": "sal"}, {"ingredient": "agua"}, {"ingredient": "maicena"}],
+        "description": "dance monkey, dance monkey oh oh !",
+        "author" : "5f0bc85dfb8f0170d7f543cf",
+        "upvotes": 5
+    }
+]
