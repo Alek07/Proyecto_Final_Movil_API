@@ -2,6 +2,7 @@ require('./db')
 const express = require('express')
 const userRouter = require('./routers/user')
 const recipeRouter = require('./routers/recipe')
+const cors = require('cors')
 
 const app = express()
 const port = process.env.PORT
