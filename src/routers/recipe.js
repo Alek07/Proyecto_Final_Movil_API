@@ -61,9 +61,10 @@ router.get('/recipe/:id', auth, async (req, res) => {
 //Add Recipe to User favorites
 router.patch('/recipes/:id/add', auth, async (req, res) => {
     try {
-        var recipe = {"recipe": req.params.id}
+        var newFavorite = {"recipe": req.params.id}
+        var recipe = await Recipe.findOne({ _id: req.params.id })
         if(!req.user.favorites.length) {
-            req.user.favorites.push(recipe)
+            req.user.favorites.push(newFavorite)
         }
         else {
             var recipes_id = req.user.favorites.map(favorite => favorite.recipe.toString())
@@ -71,9 +72,11 @@ router.patch('/recipes/:id/add', auth, async (req, res) => {
             if(!isFavorite)
                 return res.status(400).send({ error: 'recipe is already favorite' })
 
-            req.user.favorites.push(recipe)
+            req.user.favorites.push(newFavorite)
+            recipe["upvotes"] += 1
         }
         await req.user.save()
+        await recipe.save()
         res.send(req.user)
     } catch (e) {
         console.log(e)
@@ -84,9 +87,12 @@ router.patch('/recipes/:id/add', auth, async (req, res) => {
 //Remove Recipe from User favorites
 router.patch('/recipes/:id/remove', auth, async (req, res) => {
     try {
+        var recipe = await Recipe.findOne({ _id: req.params.id })
         var favorites = req.user.favorites.filter( favorite => favorite.recipe != req.params.id)
         req.user.favorites = favorites
+        recipe["upvotes"] -= 1
         await req.user.save()
+        await recipe.save()
         res.send(req.user)
     } catch (e) {
         console.log(e)
