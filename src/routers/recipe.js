@@ -65,6 +65,7 @@ router.patch('/recipes/:id/add', auth, async (req, res) => {
         var recipe = await Recipe.findOne({ _id: req.params.id })
         if(!req.user.favorites.length) {
             req.user.favorites.push(newFavorite)
+            recipe["upvotes"] += 1
         }
         else {
             var recipes_id = req.user.favorites.map(favorite => favorite.recipe.toString())
