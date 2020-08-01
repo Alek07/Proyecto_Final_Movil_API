@@ -40,6 +40,18 @@ const recipeSchema = new mongoose.Schema({
     timestamps: true
 })
 
+//Values to send
+recipeSchema.methods.toJSON = function() {
+    const recipe = this
+    const recipeObject = recipe.toObject()
+
+    recipeObject.images.forEach(element => {
+        delete element.image
+    });
+
+    return recipeObject
+}
+
 //Set max amount of ingredients upload
 recipeSchema.path('ingredients').validate(function (value){
     if(value.length > 6)
